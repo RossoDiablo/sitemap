@@ -10,6 +10,10 @@ import (
 )
 
 const sitemapFile = "sitemap.xml"
+var (
+	URL := flag.String("url", "https://gophercises.com", "URL of a site")
+	Depth := flag.Int("depth", 1, "maximum depth of links")
+)
 
 func exit(msg string) {
 	fmt.Println(msg)
@@ -18,8 +22,7 @@ func exit(msg string) {
 
 func main() {
 	fmt.Println("Hello!")
-	URL := flag.String("url", "https://gophercises.com", "URL of a site")
-	Depth := flag.Int("depth", 1, "maximum depth of links")
+
 	flag.Parse()
 
 	sitemap, err := sitemap.Create(*URL, *Depth)
