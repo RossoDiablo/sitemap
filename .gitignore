@@ -16,3 +16,4 @@
 # Ignore tmp files
 tmp/*
 
+.DS_Store
